@@ -118,7 +118,7 @@ public class HelloController {
         try {
             System.out.println("start connecting to mysql");
             String url = "jdbc:mysql://149.28.128.137:3306/database";
-            String user = "database";
+            String user = "";
             String mySQLPassword = "bjTYFTm4N5sRzziR";
             Connection connect = DriverManager.getConnection(url, user, mySQLPassword);
             // url   jdbc:mysql//(server address)/(database name) , user , passwd
@@ -153,7 +153,7 @@ public class HelloController {
         try {
             System.out.println("start connecting");
             String url = "jdbc:mysql://149.28.128.137:3306/database";
-            String user = "database";
+            String user = "";
             String mySQLPassword = "bjTYFTm4N5sRzziR";
             Connection connect = DriverManager.getConnection(url, user, mySQLPassword);
             // url   jdbc:mysql//(server address)/(database name) , user , passwd
