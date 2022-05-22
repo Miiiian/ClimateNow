@@ -24,4 +24,5 @@ fontawesomefx-fontawesome-4.7.0-9.1.22
 
 ---
 Group Assignment
+
 Use JavaFX and Scene Builder 
