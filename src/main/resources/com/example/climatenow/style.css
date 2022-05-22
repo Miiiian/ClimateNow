@@ -1,0 +1,10 @@
+.root {
+-fx-background-image: url('newMainPage1.jpg');
+-fx-background-size: cover;
+}
+
+.button {
+-fx-background-color: transparent;
+-fx-align: center;
+-fx-font-size: 20px;
+}

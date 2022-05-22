@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.climatenow.HomePageController">
+   <children>
+      <Button layoutX="11.0" layoutY="358.0" mnemonicParsing="false" onAction="#knowledge" prefHeight="60.0" prefWidth="247.0" />
+      <Button layoutX="797.0" layoutY="144.0" mnemonicParsing="false" onAction="#friends" prefHeight="52.0" prefWidth="171.0" text="Button">
+         <graphic>
+            <Pane prefHeight="67.0" prefWidth="161.0">
+               <children>
+                  <ImageView fitHeight="79.0" fitWidth="45.0" layoutX="6.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons-friends.png" />
+                     </image>
+                  </ImageView>
+                  <Text layoutX="69.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Friends" />
+               </children>
+            </Pane>
+         </graphic>
+      </Button>
+      <Button layoutX="557.0" layoutY="45.0" mnemonicParsing="false" onAction="#quiz" prefHeight="52.0" prefWidth="181.0" text="Button">
+         <graphic>
+            <Pane prefHeight="67.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="79.0" fitWidth="45.0" layoutX="6.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons-quiz.png" />
+                     </image>
+                  </ImageView>
+                  <Text layoutX="79.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quiz" />
+               </children>
+            </Pane>
+         </graphic>
+      </Button>
+      <Button layoutX="556.0" layoutY="144.0" mnemonicParsing="false" onAction="#settings" prefHeight="52.0" prefWidth="179.0" text="Button">
+         <graphic>
+            <Pane prefHeight="67.0" prefWidth="180.0">
+               <children>
+                  <ImageView fitHeight="79.0" fitWidth="45.0" layoutX="6.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons-settings.png" />
+                     </image>
+                  </ImageView>
+                  <Text layoutX="67.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Settings" />
+               </children>
+            </Pane>
+         </graphic>
+      </Button>
+      <Button layoutX="798.0" layoutY="46.0" mnemonicParsing="false" onAction="#ranking" prefHeight="52.0" prefWidth="168.0" text="Button">
+         <graphic>
+            <Pane prefHeight="67.0" prefWidth="161.0">
+               <children>
+                  <ImageView fitHeight="79.0" fitWidth="45.0" layoutX="6.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons-ranking.png" />
+                     </image>
+                  </ImageView>
+                  <Text layoutX="63.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ranking" />
+               </children>
+            </Pane>
+         </graphic>
+      </Button>
+      <Button fx:id="myImageView" layoutX="552.0" layoutY="338.0" mnemonicParsing="false" prefHeight="166.0" prefWidth="127.0">
+         <graphic>
+            <Pane prefHeight="153.0" prefWidth="121.0">
+               <children>
+                  <ImageView fitHeight="168.0" fitWidth="119.0" layoutX="-2.0" onMouseClicked="#displayImage" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@climateChange.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </graphic>
+      </Button>
+      <Button fx:id="myImageView1" layoutX="696.0" layoutY="338.0" mnemonicParsing="false" prefHeight="166.0" prefWidth="127.0">
+         <graphic>
+            <Pane prefHeight="153.0" prefWidth="121.0">
+               <children>
+                  <ImageView fitHeight="168.0" fitWidth="119.0" layoutX="-2.0" onMouseClicked="#displayGlobal" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@globalWarming.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </graphic>
+      </Button>
+      <Button fx:id="myImageView11" layoutX="838.0" layoutY="338.0" mnemonicParsing="false" prefHeight="166.0" prefWidth="127.0">
+         <graphic>
+            <Pane prefHeight="153.0" prefWidth="121.0">
+               <children>
+                  <ImageView fitHeight="168.0" fitWidth="119.0" layoutX="-2.0" onMouseClicked="#displayCarbon" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@carbonEmission.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>

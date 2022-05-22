@@ -2,17 +2,23 @@ package com.example.climatenow;
 
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.event.ActionEvent;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.sql.*;
 import java.util.HashMap;
 
 
-public class HelloController {
+public class LoginPageController {
 
     @FXML // fx:id="loginButton"
     private Button loginButton; // Value injected by FXMLLoader
@@ -32,10 +38,12 @@ public class HelloController {
     private String usernameFromText, passwordFromText;
     private HashMap<String, String> usernameAndPasswordMap = new HashMap<>();
     private static int inc = 0;
-
+    private String url = "jdbc:mysql://149.28.128.137:3306/database";
+    private String user = "database";
+    private String mySQLPassword = "bjTYFTm4N5sRzziR";
 
     @FXML
-    void loginClick(ActionEvent event) {
+    void loginClick(ActionEvent event) throws IOException {
         usernameFromText = username_text.getText();
         passwordFromText = password_text.getText();
         loadMysqlIntoHashMap();
@@ -48,7 +56,12 @@ public class HelloController {
         if (whetherUsernameInHashMap(username_text.getText(), usernameAndPasswordMap)) {
             if (usernameAndPasswordMap.get(usernameFromText).equals(passwordFromText)) {
                 System.out.println("Successful Login");
-                //TODO switchToHomeScene();
+                FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("home-page.fxml"));
+                Parent root = fxmlLoader.load();
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                Scene scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
             } else {
                 System.out.println("Wrong password.");
             }
@@ -92,8 +105,13 @@ public class HelloController {
     }
 
 
-    public static void switchToHomeScene() {
-        //TODO
+    public void switchToHomeScene(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("home-page.fxml"));
+        Parent root = fxmlLoader.load();
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
 
@@ -117,9 +135,6 @@ public class HelloController {
     public void loadMysqlIntoHashMap() {
         try {
             System.out.println("start connecting to mysql");
-            String url = "jdbc:mysql://149.28.128.137:3306/database";
-            String user = "";
-            String mySQLPassword = "bjTYFTm4N5sRzziR";
             Connection connect = DriverManager.getConnection(url, user, mySQLPassword);
             // url   jdbc:mysql//(server address)/(database name) , user , passwd
 
@@ -130,11 +145,9 @@ public class HelloController {
             ResultSet rs = stmt.executeQuery("select * from database.db");
             //user 为你表的名称
             while (rs.next()) {
-
                 String studentID = rs.getString("userID");
                 String userName = rs.getString("userName");
                 String userPassword = rs.getString("userPassword");
-
                 usernameAndPasswordMap.put(userName, userPassword);  // put userName and userPassword into HashMap
 
                 System.out.println("userID:" + studentID + ""
@@ -152,9 +165,6 @@ public class HelloController {
     public void updateNewUserIntoMysql(String username, String password) {
         try {
             System.out.println("start connecting");
-            String url = "jdbc:mysql://149.28.128.137:3306/database";
-            String user = "";
-            String mySQLPassword = "bjTYFTm4N5sRzziR";
             Connection connect = DriverManager.getConnection(url, user, mySQLPassword);
             // url   jdbc:mysql//(server address)/(database name) , user , passwd
             System.out.println("Success connect Mysql server!");
