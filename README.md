@@ -22,8 +22,7 @@ fontawesomefx-commons-9.1.22
 fontawesomefx-fontawesome-4.7.0-9.1.22
 ```
 
+---
+Group Assignment
 
-
-----
-###Group Assignment
-#####Use JavaFX and Scene Builder 
+Use JavaFX and Scene Builder 
