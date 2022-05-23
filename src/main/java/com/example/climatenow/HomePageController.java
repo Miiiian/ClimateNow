@@ -50,8 +50,6 @@ public class HomePageController {
             if (dp.isSupported(java.awt.Desktop.Action.BROWSE)) {
                 dp.browse(uri);
             }
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -67,11 +65,8 @@ public class HomePageController {
             if (dp.isSupported(java.awt.Desktop.Action.BROWSE)) {
                 dp.browse(uri);
             }
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-
         }
     }
 
@@ -86,11 +81,8 @@ public class HomePageController {
             if (dp.isSupported(java.awt.Desktop.Action.BROWSE)) {
                 dp.browse(uri);
             }
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-
         }
     }
 }
