@@ -18,7 +18,6 @@ public class HomePageController {
     private ImageView firstImageView;
 
     public void quiz(ActionEvent e) {
-        System.out.println("Quiz opened");
         // switch to quiz page use QuizQuestions.fxml
         try {
             Parent root = FXMLLoader.load(getClass().getResource("QuizQuestions.fxml"));

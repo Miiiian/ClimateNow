@@ -72,8 +72,6 @@ public class QuizPageController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
         // 打印Quiz的内容
-        System.out.println(Arrays.toString(Answer.get(index)));
-
 
         //Questions for user
         UserQ.setText(Question.get(index));
