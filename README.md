@@ -2,7 +2,13 @@
 
 This is the year 1 semester 2 in Taylor's uni group assignment for OOP
 
+##Login and Registration Page
 ![](https://s3.bmp.ovh/imgs/2022/05/21/745f1f16a199bca8.png)
+
+
+##Home Page
+![](https://i.bmp.ovh/imgs/2022/05/27/718e6daa22406e53.png)
+
 
 ----
 First time use this project need run the code at below in terminal:
