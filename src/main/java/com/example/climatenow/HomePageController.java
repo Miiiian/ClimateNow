@@ -2,11 +2,15 @@ package com.example.climatenow;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
 
 public class HomePageController {
 
@@ -15,7 +19,18 @@ public class HomePageController {
 
     public void quiz(ActionEvent e) {
         System.out.println("Quiz opened");
-        // TODO: switch to Quiz scene
+        // switch to quiz page use QuizQuestions.fxml
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("QuizQuestions.fxml"));
+            Scene scene = new Scene(root, 1000, 600);
+            Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+
+
     }
 
     public void ranking(ActionEvent e) {
@@ -85,4 +100,6 @@ public class HomePageController {
             e.printStackTrace();
         }
     }
+
+
 }

@@ -13,9 +13,13 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+import static com.example.climatenow.QuizPageController.loadQuestionHashMapAndList;
+
+
 public class Application extends javafx.application.Application {
     @Override
     public void start(Stage stage) throws IOException {
+        loadQuestionHashMapAndList();
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("loginScene.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);

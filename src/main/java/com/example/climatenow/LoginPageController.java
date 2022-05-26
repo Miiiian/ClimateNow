@@ -2,14 +2,12 @@ package com.example.climatenow;
 
 
 import javafx.animation.PauseTransition;
-import javafx.animation.SequentialTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
@@ -19,7 +17,6 @@ import javafx.util.Duration;
 import java.io.IOException;
 import java.sql.*;
 import java.util.HashMap;
-import java.util.concurrent.TimeUnit;
 
 
 public class LoginPageController {
@@ -226,7 +223,7 @@ public class LoginPageController {
     }
 
     /**
-     * Generate a random integer ID for database key value
+     * Generate a random integer ID for everyone sign up
      * @return (int) A random ID that length is 10
      */
     private static int getId() {
@@ -239,4 +236,5 @@ public class LoginPageController {
         return Math.abs((int) id);
 
     }
+
 }
