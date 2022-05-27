@@ -56,7 +56,7 @@ public class LoginPageController {
      * @function Login exist user via the username that stored in database, and switch to Home Page
      */
     @FXML
-    void loginClick(ActionEvent event) throws IOException, InterruptedException {
+    void loginClick(ActionEvent event) throws IOException {
         usernameFromText = username_text.getText();
         passwordFromText = password_text.getText();
         loadMysqlIntoHashMap();
@@ -105,7 +105,7 @@ public class LoginPageController {
                     showDialogButton.setVisible(true);
                     setButtonToEmptyWithTime(showDialogButton, 2);
                 } catch (Exception e) {
-                    System.out.println(e);
+                    System.out.println("Sign up method can't connect to database or something wrong");
                 }
             } else if (!(isValidPassword(password_text.getText())) && isValidUsername(username_text.getText())) {
                 showDialogButton.setText("Password must be 6 to 20 characters, contain letters, numbers, special characters");

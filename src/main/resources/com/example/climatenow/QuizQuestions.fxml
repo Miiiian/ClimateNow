@@ -38,7 +38,7 @@
       </Label>
       <Label fx:id="resultLabel" alignment="CENTER" layoutX="257.0" layoutY="469.0" prefHeight="45.0" prefWidth="499.0" textAlignment="CENTER" wrapText="true">
          <font>
-            <Font size="18.0" />
+            <Font size="24.0" />
          </font></Label>
       <Button fx:id="switchToHomeButton" alignment="CENTER" layoutX="24.0" layoutY="19.0" mnemonicParsing="false" onAction="#switchToHomePage" prefHeight="48.0" prefWidth="91.0" text="Home">
          <font>

@@ -7,30 +7,20 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
-import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
-import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 
 public class QuizPageController implements Initializable {
-    private Stage homeStage;
-    private Scene homeScene;
-    private Parent homeRoot;
+
+
 
     @FXML
-    private ImageView switchToHomePageToo;
-    @FXML
-    private Button switchToHomeButton;
-    @FXML
     private Label QuizQLabel;
-    @FXML
-    private Button StartB;
     @FXML
     private Label UserQ;
     @FXML
@@ -48,26 +38,26 @@ public class QuizPageController implements Initializable {
 
     //Arrays for each questions' answers
     @FXML
-    private static String[] zero = {"To strengthen the country’s ability to deal with impacts of climate change", "To limit global warming to below 2 deg and if possible below 1.5 deg", "To prevent further damage by halting all temperature rising activities"};
-    private static String[] one = {"192", "120", "300", "193"};
-    private static String[] two = {"Climate change", "Increase in population size", "Pollution", "Supernatural causes"};
-    private static String[] three = {"Variations in global temperatures that occurs over time", "The change in weather", "Rise in temperature of the surface of Earth", "Rise of ocean water levels and melting of ice caps"};
-    private static String[] four = {"Forms deadly pathogens in sources, making consumption dangerous", "Causes stomachache", "Decreases the aquatic population"};
-    private static String[] five = {"The increase of Earth’s temperature", "The increase of the moon’s temperature", "The decrease of Earth’s temperature", "The decrease of the moon’s temperature"};
-    private static String[] six = {"The decrease of the moon’s temperature", "Deforestation", "Reforestation", "The burning of fossil fuels", "the increase of greenhouse gases"};
-    private static String[] seven = {"Methane gas", "Oxygen", "Nitrous oxide", "Carbon Dioxide"};
-    private static String[] eight = {"Greenhouse gases absorbs infrared radiation in Earth’s atmosphere", "this warms the world’s climate", "Greenhouse gases causes oxygen in the atmosphere to rise", "Greenhouse gases cools down the Earth’s temperature", "Greenhouse gases will not affect climate change"};
-    private static String[] nine = {"Melts Ice Caps, which increases the sea levels", "Global warming has no side effects"};
+    private static final String[] ZERO = {"To strengthen the country’s ability to deal with impacts of climate change", "To limit global warming to below 2 deg and if possible below 1.5 deg", "To prevent further damage by halting all temperature rising activities"};
+    private static final String[] ONE = {"192", "120", "300", "193"};
+    private static final String[] TWO = {"Climate change", "Increase in population size", "Pollution", "Supernatural causes"};
+    private static final String[] THREE = {"Variations in global temperatures that occurs over time", "The change in weather", "Rise in temperature of the surface of Earth", "Rise of ocean water levels and melting of ice caps"};
+    private static final String[] FOUR = {"Forms deadly pathogens in sources, making consumption dangerous", "Causes stomachache", "Decreases the aquatic population"};
+    private static final String[] FIVE = {"The increase of Earth’s temperature", "The increase of the moon’s temperature", "The decrease of Earth’s temperature", "The decrease of the moon’s temperature"};
+    private static final String[] SIX = {"The decrease of the moon’s temperature", "Deforestation", "Reforestation", "The burning of fossil fuels", "the increase of greenhouse gases"};
+    private static final String[] SEVEN = {"Methane gas", "Oxygen", "Nitrous oxide", "Carbon Dioxide"};
+    private static final String[] EIGHT = {"Greenhouse gases absorbs infrared radiation in Earth’s atmosphere", "this warms the world’s climate", "Greenhouse gases causes oxygen in the atmosphere to rise", "Greenhouse gases cools down the Earth’s temperature", "Greenhouse gases will not affect climate change"};
+    private static final String[] NINE = {"Melts Ice Caps, which increases the sea levels", "Global warming has no side effects"};
 
 
     @FXML
-    private String userQuestionString[];
+    private String[] userQuestionString;
 
     @FXML
     private String userQuestionNow;
 
     @FXML
-    public static HashMap<String, Integer> questionsHashMap = new HashMap<String, Integer>();
+    public static HashMap<String, Integer> questionsHashMap = new HashMap<>();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
@@ -86,9 +76,7 @@ public class QuizPageController implements Initializable {
 
         // Locking in answers
         QuizQ.setOnAction(this::getChoices);
-        QuizQ.valueProperty().addListener((e) -> {
-            QuizQ.setDisable(true);
-        });
+        QuizQ.valueProperty().addListener((e) -> QuizQ.setDisable(true));
 
     }
 
@@ -118,9 +106,9 @@ public class QuizPageController implements Initializable {
             QuizQ.setDisable(true);
         } else {
             try {
-                homeRoot = FXMLLoader.load(getClass().getResource("QuizQuestions.fxml"));
-                homeScene = new Scene(homeRoot);
-                homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                Parent homeRoot = FXMLLoader.load(getClass().getResource("QuizQuestions.fxml"));
+                Scene homeScene = new Scene(homeRoot);
+                Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 homeStage.setScene(homeScene);
                 homeStage.show();
 
@@ -142,16 +130,16 @@ public class QuizPageController implements Initializable {
         Question.add("What is not a greenhouse gas?");
         Question.add("How does greenhouse gases contribute to climate change?");
         Question.add("What are the effects of global warming?");
-        Answer.add(zero);
-        Answer.add(one);
-        Answer.add(two);
-        Answer.add(three);
-        Answer.add(four);
-        Answer.add(five);
-        Answer.add(six);
-        Answer.add(seven);
-        Answer.add(eight);
-        Answer.add(nine);
+        Answer.add(ZERO);
+        Answer.add(ONE);
+        Answer.add(TWO);
+        Answer.add(THREE);
+        Answer.add(FOUR);
+        Answer.add(FIVE);
+        Answer.add(SIX);
+        Answer.add(SEVEN);
+        Answer.add(EIGHT);
+        Answer.add(NINE);
         questionsHashMap.put("Which was the aim of the 2015 Paris Agreement that involved climate change?", 1);
         questionsHashMap.put("How many parties agreed to comply with the 2015 Paris Agreement?", 3);
         questionsHashMap.put("What is the biggest threat towards development according to SDG 13 (Sustainable Development Goals)?", 0);
