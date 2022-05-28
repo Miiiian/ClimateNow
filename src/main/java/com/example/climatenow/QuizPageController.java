@@ -13,11 +13,14 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
 import java.util.*;
 
+import static com.example.climatenow.LoginPageController.getUsername;
+
 public class QuizPageController implements Initializable {
-
-
 
     @FXML
     private Label QuizQLabel;
@@ -27,6 +30,10 @@ public class QuizPageController implements Initializable {
     private Label resultLabel;
     @FXML
     private ChoiceBox<String> QuizQ;
+    private String usernameNow = getUsername();
+    private final String URL = "jdbc:mysql://149.28.128.137:3306/database";
+    private final String USER = "database";
+    private final String MYSQLPASSWORD = "bjTYFTm4N5sRzziR";
 
     @FXML
     public static ArrayList<String> Question = new ArrayList<>();
@@ -87,6 +94,7 @@ public class QuizPageController implements Initializable {
 
         if (index == questionsHashMap.get(userQuestionNow)) {
             resultLabel.setText("Correct!");
+            plusOneScoreForUserIntoMysql(usernameNow); // 给当前用户增加一分
         } else {
             resultLabel.setText("Wrong!");
         }
@@ -97,6 +105,22 @@ public class QuizPageController implements Initializable {
 
     }
 
+    // 连接数据库并给当前用户增加分数
+    public void plusOneScoreForUserIntoMysql(String usernameNow) {
+        try {
+            // System.out.println("start connecting");
+            Connection connect = DriverManager.getConnection(URL, USER, MYSQLPASSWORD);
+            // url   jdbc:mysql//(server address)/(database name) , user , passwd
+            // System.out.println("Success connect Mysql server!");
+            Statement stmt = connect.createStatement();
+            String sql = "UPDATE database.db SET userMark = userMark+1 WHERE username = " + "'" +  usernameNow + "'" ;
+            stmt.executeUpdate(sql);
+            connect.close(); // Close connection
+        } catch (Exception e) {
+            System.out.print("get data error!");
+            e.printStackTrace();
+        }
+    }
 
     // 刷新UserQ
     public void switchToNextQuiz(ActionEvent event) {

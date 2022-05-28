@@ -36,6 +36,7 @@ public class LoginPageController {
     private final String url = "jdbc:mysql://149.28.128.137:3306/database";
     private final String user = "database";
     private final String mySQLPassword = "bjTYFTm4N5sRzziR";
+    private static String usernameForNow;
 
     /**
      * Make the incoming button parameter invisible after a time you set
@@ -64,6 +65,7 @@ public class LoginPageController {
         if (whetherUsernameInHashMap(username_text.getText(), usernameAndPasswordMap)) {
             if (usernameAndPasswordMap.get(usernameFromText).equals(passwordFromText)) {
                 // System.out.println("Successful Login");
+                usernameForNow = usernameFromText;
                 // Switch to Home Page
                 FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("home-page.fxml"));
                 Parent root = fxmlLoader.load();
@@ -237,4 +239,10 @@ public class LoginPageController {
 
     }
 
+    /**
+     * get username who is a login now
+     */
+    public static String getUsername() {
+        return usernameForNow;
+    }
 }

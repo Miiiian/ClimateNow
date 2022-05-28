@@ -33,8 +33,17 @@ public class HomePageController {
     }
 
     public void ranking(ActionEvent e) {
-        System.out.println("Ranking list opened");
-        // TODO: switch to Ranking list scene
+        // switch to ranking page use rankingPage.fxml
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("rankingPage.fxml"));
+            Scene scene = new Scene(root, 1000, 600);
+            Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+
     }
 
     public void friends(ActionEvent e) {
