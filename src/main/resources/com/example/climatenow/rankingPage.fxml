@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-
 
 <AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.climatenow.RankingPageController">
    <children>
@@ -16,63 +16,72 @@
       </ImageView>
       <Text fx:id="rankOneTextField" layoutX="408.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="373.9173583984375">
          <font>
-            <Font size="29.0" />
+            <Font name="Futura Medium" size="29.0" />
          </font>
       </Text>
       <Text fx:id="rankTwoTextField" layoutX="408.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="373.9173583984375">
          <font>
-            <Font size="29.0" />
+            <Font name="Futura Medium" size="29.0" />
          </font>
       </Text>
       <Text fx:id="rankThreeTextField" layoutX="408.0" layoutY="308.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="373.9173583984375">
          <font>
-            <Font size="29.0" />
+            <Font name="Futura Medium" size="29.0" />
          </font>
       </Text>
       <Text fx:id="rankFourTextField" layoutX="408.0" layoutY="372.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="373.9173583984375">
          <font>
-            <Font size="29.0" />
+            <Font name="Futura Medium" size="29.0" />
          </font>
       </Text>
       <Text fx:id="rankFiveTextField" layoutX="408.0" layoutY="436.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="373.9173583984375">
          <font>
-            <Font size="29.0" />
+            <Font name="Futura Medium" size="29.0" />
          </font>
       </Text>
       <Text fx:id="rankYourselfTextField" fill="#6000ff" layoutX="408.0" layoutY="501.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="373.9173583984375">
          <font>
-            <Font size="29.0" />
+            <Font name="Futura Medium" size="29.0" />
          </font>
       </Text>
       <Text fx:id="rankOneTextFieldScore" layoutX="789.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="73.33013916015625">
          <font>
-            <Font size="29.0" />
+            <Font name="Futura Medium" size="29.0" />
          </font>
       </Text>
       <Text fx:id="rankTwoTextFieldScore" layoutX="790.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="73.33013916015625">
          <font>
-            <Font size="29.0" />
+            <Font name="Futura Medium" size="29.0" />
          </font>
       </Text>
       <Text fx:id="rankThreeTextFieldScore" layoutX="790.0" layoutY="308.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="73.33013916015625">
          <font>
-            <Font size="29.0" />
+            <Font name="Futura Medium" size="29.0" />
          </font>
       </Text>
       <Text fx:id="rankFourTextFieldScore" layoutX="789.0" layoutY="372.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="73.33013916015625">
          <font>
-            <Font size="29.0" />
+            <Font name="Futura Medium" size="29.0" />
          </font>
       </Text>
       <Text fx:id="rankFiveTextFieldScore" layoutX="790.0" layoutY="437.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="73.33013916015625">
          <font>
-            <Font size="29.0" />
+            <Font name="Futura Medium" size="29.0" />
          </font>
       </Text>
       <Text fx:id="rankYourselfTextFieldScore" layoutX="790.0" layoutY="501.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="73.33013916015625">
          <font>
-            <Font size="29.0" />
+            <Font name="Futura Medium" size="29.0" />
          </font>
       </Text>
+      <Button fx:id="homeButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToHomePage" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: #FFFFFF;" textAlignment="CENTER">
+         <graphic>
+            <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Image/Home_noactive.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
    </children>
 </AnchorPane>

@@ -57,8 +57,16 @@ public class HomePageController {
     }
 
     public void knowledge(ActionEvent e) {
-        System.out.println("Knowledge opened");
-        // TODO: switch to Knowledge scene
+        // switch to ranking page use rankingPage.fxml
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("knowledge-page.fxml"));
+            Scene scene = new Scene(root, 1000, 600);
+            Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
     }
 
 

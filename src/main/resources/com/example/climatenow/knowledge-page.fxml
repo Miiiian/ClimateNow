@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" styleClass="back" stylesheets="@style-knowledge.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.climatenow.KnowledgeController">
+    <children>
+        <VBox prefHeight="600.0" prefWidth="110.0" styleClass="right-bar" stylesheets="@style-knowledge.css">
+            <children>
+                <HBox alignment="CENTER" prefHeight="85.0" prefWidth="110.0">
+                    <children>
+                        <ImageView fitHeight="110.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@Image/logo2.png" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </HBox>
+                <HBox prefHeight="38.0" prefWidth="110.0">
+                    <children>
+                        <Button fx:id="homeButton" alignment="CENTER" contentDisplay="TOP" graphicTextGap="1.0" mnemonicParsing="false" onAction="#switchToHomePage" onMouseClicked="#switchToHomePage" prefHeight="65.0" prefWidth="65.0" stylesheets="@style.css" textFill="#9994fa">
+                            <HBox.margin>
+                                <Insets left="22.0" />
+                            </HBox.margin>
+                            <styleClass>
+                                <String fx:value="transparent" />
+                                <String fx:value="jfx" />
+                            </styleClass>
+                     <graphic>
+                                <ImageView fitHeight="48.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true" x="23.0">
+                                    <image>
+                                        <Image url="@Image/Home_noactive.png" />
+                                    </image>
+                                </ImageView>
+                     </graphic>
+                        </Button>
+                    </children>
+                </HBox>
+                <HBox prefHeight="41.0" prefWidth="110.0">
+                    <children>
+                        <Button alignment="CENTER" contentDisplay="TOP" graphicTextGap="1.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="65.0" stylesheets="@style.css" textFill="#9994fa">
+                            <font>
+                                <Font name="Nirmala UI Bold" size="13.0" />
+                            </font>
+                            <styleClass>
+                                <String fx:value="transparent" />
+                                <String fx:value="jfx" />
+                                <String fx:value="current-button" />
+                            </styleClass>
+                            <HBox.margin>
+                                <Insets left="22.0" top="15.0" />
+                            </HBox.margin>
+                        </Button>
+                    </children>
+                </HBox>
+                <HBox prefHeight="37.0" prefWidth="110.0" />
+                <HBox prefHeight="37.0" prefWidth="110.0" />
+            </children>
+        </VBox>
+        <Button layoutX="122.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#switchToArticle1" prefHeight="230.0" prefWidth="415.0" styleClass="transparent" stylesheets="@style.css">
+            <graphic>
+                <ImageView fx:id="article1" fitHeight="222.0" fitWidth="424.0" pickOnBounds="true" preserveRatio="true" styleClass="transparent">
+                    <image>
+                        <Image url="@Image/Article1.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+        <Button layoutX="123.0" layoutY="268.0" mnemonicParsing="false" onMouseClicked="#switchToArticle4" prefHeight="281.0" prefWidth="173.0" styleClass="transparent" stylesheets="@style.css">
+            <graphic>
+                <ImageView fx:id="article4" fitHeight="299.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@Image/Article4.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+        <Button layoutX="335.0" layoutY="268.0" mnemonicParsing="false" onMouseClicked="#switchToArticle5" prefHeight="280.0" prefWidth="173.0" styleClass="transparent" stylesheets="@style.css">
+            <graphic>
+                <ImageView fx:id="article5" fitHeight="299.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@Image/Article5.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+        <Button layoutX="546.0" layoutY="21.0" mnemonicParsing="false" onMouseClicked="#switchToArticle2" prefHeight="280.0" prefWidth="173.0" styleClass="transparent" stylesheets="@style.css">
+            <graphic>
+                <ImageView fx:id="article2" fitHeight="299.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@Image/Article2.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+        <Button layoutX="754.0" layoutY="22.0" mnemonicParsing="false" onMouseClicked="#switchToArticle3" prefHeight="280.0" prefWidth="173.0" styleClass="transparent" stylesheets="@style.css">
+            <graphic>
+                <ImageView fx:id="article3" fitHeight="299.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@Image/Article3.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+        <Button layoutX="545.0" layoutY="345.0" mnemonicParsing="false" onMouseClicked="#switchToArticle6" prefHeight="230.0" prefWidth="415.0" styleClass="transparent" stylesheets="@style.css">
+            <graphic>
+                <ImageView fx:id="article6" fitHeight="222.0" fitWidth="424.0" pickOnBounds="true" preserveRatio="true" styleClass="transparent">
+                    <image>
+                        <Image url="@Image/Article6.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+    </children>
+</AnchorPane>

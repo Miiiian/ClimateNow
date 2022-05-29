@@ -1,0 +1,45 @@
+.search-box{
+    -fx-background-color:#FFFFFF;
+    -fx-background-radius: 100;
+}
+
+.transparent{
+    -fx-background-color: rgba(0,0,0,0);
+}
+
+.search-button{
+    -fx-background-color:#828282;
+    -fx-background-radius: 30;
+}
+
+.right-bar{
+    -fx-background-color:#635bdf;
+}
+
+.back{
+    -fx-background-color:#e8eaf8;
+}
+
+.shadow{
+    -fx-effect: dropShadow(three-pass-box,rgba(0,0,0,0.4),8.0 , 0.0, 0.0 ,8.0);
+}
+
+.roundpic{
+    -fx-background-color:#635bdf;
+    -fx-background-radius: 20;
+}
+
+.jfx.button:pressed{
+    -fx-background-color:#fffefe;
+    -fx-background-radius: 15;
+}
+
+.jfx.button:hover{
+    -fx-background-color:#fffefe;
+    -fx-background-radius: 15;
+}
+
+.current-button{
+    -fx-background-color:#fffefe;
+    -fx-background-radius: 15;
+}
