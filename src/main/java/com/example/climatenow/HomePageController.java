@@ -23,6 +23,7 @@ public class HomePageController {
             Parent root = FXMLLoader.load(getClass().getResource("QuizQuestions.fxml"));
             Scene scene = new Scene(root, 1000, 600);
             Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+            stage.setResizable(false);
             stage.setScene(scene);
             stage.show();
         } catch (IOException ex) {
@@ -38,6 +39,7 @@ public class HomePageController {
             Parent root = FXMLLoader.load(getClass().getResource("rankingPage.fxml"));
             Scene scene = new Scene(root, 1000, 600);
             Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+            stage.setResizable(false);
             stage.setScene(scene);
             stage.show();
         } catch (IOException ex) {
@@ -52,8 +54,16 @@ public class HomePageController {
     }
 
     public void settings(ActionEvent e) {
-        System.out.println("Settings opened");
-        // TODO: switch to Settings scene
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("settingPage.fxml"));
+            Scene scene = new Scene(root, 1000, 600);
+            Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+            stage.setResizable(false);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
     }
 
     public void knowledge(ActionEvent e) {
@@ -62,6 +72,8 @@ public class HomePageController {
             Parent root = FXMLLoader.load(getClass().getResource("knowledge-page.fxml"));
             Scene scene = new Scene(root, 1000, 600);
             Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+            // set stage cannot resizeable
+            stage.setResizable(false);
             stage.setScene(scene);
             stage.show();
         } catch (IOException ex) {

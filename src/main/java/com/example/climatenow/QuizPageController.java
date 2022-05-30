@@ -133,6 +133,7 @@ public class QuizPageController implements Initializable {
                 Parent homeRoot = FXMLLoader.load(getClass().getResource("QuizQuestions.fxml"));
                 Scene homeScene = new Scene(homeRoot);
                 Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                homeStage.setResizable(false);
                 homeStage.setScene(homeScene);
                 homeStage.show();
 
@@ -184,6 +185,7 @@ public class QuizPageController implements Initializable {
             Parent root = fxmlLoader.load();
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             Scene scene = new Scene(root);
+            stage.setResizable(false);
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {

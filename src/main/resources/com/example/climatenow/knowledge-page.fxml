@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="600.0" prefWidth="1000.0" styleClass="back" stylesheets="@style-knowledge.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.climatenow.KnowledgeController">
     <children>
@@ -43,23 +42,7 @@
                         </Button>
                     </children>
                 </HBox>
-                <HBox prefHeight="41.0" prefWidth="110.0">
-                    <children>
-                        <Button alignment="CENTER" contentDisplay="TOP" graphicTextGap="1.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="65.0" stylesheets="@style.css" textFill="#9994fa">
-                            <font>
-                                <Font name="Nirmala UI Bold" size="13.0" />
-                            </font>
-                            <styleClass>
-                                <String fx:value="transparent" />
-                                <String fx:value="jfx" />
-                                <String fx:value="current-button" />
-                            </styleClass>
-                            <HBox.margin>
-                                <Insets left="22.0" top="15.0" />
-                            </HBox.margin>
-                        </Button>
-                    </children>
-                </HBox>
+                <HBox prefHeight="41.0" prefWidth="110.0" />
                 <HBox prefHeight="37.0" prefWidth="110.0" />
                 <HBox prefHeight="37.0" prefWidth="110.0" />
             </children>

@@ -22,6 +22,7 @@ public class Application extends javafx.application.Application {
         loadQuestionHashMapAndList();
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("loginScene.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
+        stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
     }

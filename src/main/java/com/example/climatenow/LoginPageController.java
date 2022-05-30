@@ -38,12 +38,13 @@ public class LoginPageController {
     private final String mySQLPassword = "bjTYFTm4N5sRzziR";
     private static String usernameForNow;
 
+
     /**
      * Make the incoming button parameter invisible after a time you set
      * @param button that need turn to invisible
      * @param time execution wait time
      */
-    private void setButtonToEmptyWithTime(Button button, Integer time){
+    public static void setButtonToEmptyWithTime(Button button, Integer time){
         PauseTransition visiblePause = new PauseTransition(
                 Duration.seconds(time)
         );
@@ -71,6 +72,7 @@ public class LoginPageController {
                 Parent root = fxmlLoader.load();
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 Scene scene = new Scene(root);
+                stage.setResizable(false);
                 stage.setScene(scene);
                 stage.show();
 
@@ -135,6 +137,7 @@ public class LoginPageController {
      * Check whether the password contains 6 to 20 characters including letters, digits, and special characters
      */
     public static boolean isValidPassword(String password) {
+
         if (password == null) {
             return false;
         }
@@ -151,8 +154,7 @@ public class LoginPageController {
         if (username == null) {
             return false;
         }
-        // String.matches
-        return username.matches("^[A-Za-z0-9_-]{3,15}$");
+        return username.matches("^[a-zA-Z0-9_\\-]{3,15}$");
     }
 
 
@@ -161,7 +163,7 @@ public class LoginPageController {
      * @param userHashMap that stored all username in database
      * @return ture username in HashMap, false username not in HashMap
      */
-    public boolean whetherUsernameInHashMap(String username, HashMap<String, String> userHashMap) {
+    public static boolean whetherUsernameInHashMap(String username, HashMap<String, String> userHashMap) {
         // Check whether the system already has this username
         boolean whetherStringInHashMap = false;
         for (String key : userHashMap.keySet()) {
