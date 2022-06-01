@@ -131,6 +131,7 @@ public class LoginPageController {
 
     }
 
+
     /**
      * Validate password with regular expression
      * @param password that need test whether valid
@@ -144,6 +145,7 @@ public class LoginPageController {
         // String.matches
         return password.matches("^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[`~!@#$%^&*()-=_+;':\",./<>?])(?=\\S+$).{6,20}$");
     }
+
 
     /**
      * Validate username with regular expression

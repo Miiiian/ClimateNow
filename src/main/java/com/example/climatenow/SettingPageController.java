@@ -28,6 +28,9 @@ public class SettingPageController {
 
 
     @FXML
+    private Button backToHomePageButton;
+
+    @FXML
     private Button showDialogButton;
 
     @FXML
@@ -90,7 +93,9 @@ public class SettingPageController {
         }
     }
 
-
+    /**
+     * @function
+     */
     @FXML
     void ClickChangePasswordButton(ActionEvent event) {
         statusOfChangePasswordOrUsername = "password";
@@ -266,6 +271,22 @@ public class SettingPageController {
             connect.close(); // 关闭连接
         } catch (Exception e) {
             System.out.print("get data error!");
+            e.printStackTrace();
+        }
+    }
+
+
+    @FXML
+    void switchToHomePage(ActionEvent event) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("home-page.fxml"));
+            Parent root = fxmlLoader.load();
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setResizable(false);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
