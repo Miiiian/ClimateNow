@@ -166,7 +166,7 @@ public class SettingPageController {
                 break;
             case "username":
                 loadMysqlIntoHashMap();
-                System.out.println(usernameAndPasswordMap);
+                //System.out.println(usernameAndPasswordMap);
                 if (whetherUsernameInHashMap(this.newInputTextField.getText(), usernameAndPasswordMap)) {
                     showDialogButton.setText("This username already used by someone");
                     showDialogButton.setVisible(true);

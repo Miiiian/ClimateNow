@@ -49,8 +49,17 @@ public class HomePageController {
     }
 
     public void friends(ActionEvent e) {
-        System.out.println("Friends list opened");
-        // TODO: switch to Friends list scene
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("friendsPage.fxml"));
+            Parent root = fxmlLoader.load();
+            Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setResizable(false);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
     }
 
     public void settings(ActionEvent e) {

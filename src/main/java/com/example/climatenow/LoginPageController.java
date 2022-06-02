@@ -41,10 +41,11 @@ public class LoginPageController {
 
     /**
      * Make the incoming button parameter invisible after a time you set
+     *
      * @param button that need turn to invisible
-     * @param time execution wait time
+     * @param time   execution wait time
      */
-    public static void setButtonToEmptyWithTime(Button button, Integer time){
+    public static void setButtonToEmptyWithTime(Button button, Integer time) {
         PauseTransition visiblePause = new PauseTransition(
                 Duration.seconds(time)
         );
@@ -53,6 +54,7 @@ public class LoginPageController {
         );
         visiblePause.play();
     }
+
 
     /**
      * @function Login exist user via the username that stored in database, and switch to Home Page
@@ -88,11 +90,12 @@ public class LoginPageController {
         }
     }
 
+
     /**
      * @function Insert/Sign Up new user to database after validate username and password
      */
     @FXML
-     void signUpClick() {
+    void signUpClick() {
         usernameFromText = username_text.getText();
         passwordFromText = password_text.getText();
         loadMysqlIntoHashMap();
@@ -119,7 +122,7 @@ public class LoginPageController {
                 showDialogButton.setText("Username must be 3 to 15 characters, contain letter, numbers, special symbol \" _-\".");
                 showDialogButton.setVisible(true);
                 setButtonToEmptyWithTime(showDialogButton, 4);
-            } else if (!(isValidPassword(password_text.getText())) && !(isValidUsername(username_text.getText()))){
+            } else if (!(isValidPassword(password_text.getText())) && !(isValidUsername(username_text.getText()))) {
                 showDialogButton.setText("Username must be 3 to 15 characters, contain letter, numbers, special symbol \" _-\".");
                 showDialogButton.setVisible(true);
                 setButtonToEmptyWithTime(showDialogButton, 4);
@@ -134,8 +137,9 @@ public class LoginPageController {
 
     /**
      * Validate password with regular expression
+     *
      * @param password that need test whether valid
-     * Check whether the password contains 6 to 20 characters including letters, digits, and special characters
+     *                 Check whether the password contains 6 to 20 characters including letters, digits, and special characters
      */
     public static boolean isValidPassword(String password) {
 
@@ -149,8 +153,9 @@ public class LoginPageController {
 
     /**
      * Validate username with regular expression
+     *
      * @param username that need test whether valid
-     * Check whether the username contains 3 to 15 characters can only contain letter, numbers or the special symbol " _-".
+     *                 Check whether the username contains 3 to 15 characters can only contain letter, numbers or the special symbol " _-".
      */
     public static boolean isValidUsername(String username) {
         if (username == null) {
@@ -161,12 +166,12 @@ public class LoginPageController {
 
 
     /**
-     * @param username that need check in database
+     * @param username    that need check in database
      * @param userHashMap that stored all username in database
      * @return ture username in HashMap, false username not in HashMap
      */
     public static boolean whetherUsernameInHashMap(String username, HashMap<String, String> userHashMap) {
-        // Check whether the system already has this username
+
         boolean whetherStringInHashMap = false;
         for (String key : userHashMap.keySet()) {
             if (username.equals(key)) {
@@ -175,12 +180,15 @@ public class LoginPageController {
             }
         }
         return whetherStringInHashMap;
+
     }
+
 
     /**
      * @function Connect to online mysql database and load username and password into usernameAndPasswordMap
      */
     public void loadMysqlIntoHashMap() {
+
         try {
             // System.out.println("start connecting to mysql");
             Connection connect = DriverManager.getConnection(url, user, mySQLPassword);
@@ -198,14 +206,18 @@ public class LoginPageController {
             }
             rs.close();
             connect.close(); // 关闭连接
+
         } catch (Exception e) {
+
             System.out.print("get data error!");
             e.printStackTrace();
+
         }
     }
 
     /**
      * Update New User's Username and Password Into MySQL database
+     *
      * @param username that need sign up and insert to database
      * @param password the new user's password
      */
@@ -230,6 +242,7 @@ public class LoginPageController {
 
     /**
      * Generate a random integer ID for everyone sign up
+     *
      * @return (int) A random ID that length is 10
      */
     private static int getId() {
