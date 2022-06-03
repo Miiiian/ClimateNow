@@ -31,9 +31,9 @@ public class QuizPageController implements Initializable {
     @FXML
     private ChoiceBox<String> QuizQ;
     private String usernameNow = getUsername();
-    private final String URL = "jdbc:mysql://149.28.128.137:3306/database";
+    private final String URL = "jdbc:mysql://***:3306/database";
     private final String USER = "database";
-    private final String MYSQLPASSWORD = "bjTYFTm4N5sRzziR";
+    private final String MYSQLPASSWORD = "";
 
     @FXML
     public static ArrayList<String> Question = new ArrayList<>();
