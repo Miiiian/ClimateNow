@@ -33,9 +33,9 @@ public class LoginPageController {
     private String usernameFromText, passwordFromText;
     private final HashMap<String, String> usernameAndPasswordMap = new HashMap<>();
     private static int inc = 0;
-    private final String url = "jdbc:mysql://149.28.128.137:3306/database";
+    private final String url = "jdbc:mysql://***:3306/database";
     private final String user = "database";
-    private final String mySQLPassword = "bjTYFTm4N5sRzziR";
+    private final String mySQLPassword = "";
     private static String usernameForNow;
 
 
