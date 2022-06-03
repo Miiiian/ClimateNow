@@ -86,9 +86,9 @@ public class RankingPageController implements Initializable {
     public void loadMysqlIntoHashMap() {
         try {
             // System.out.println("start connecting to mysql");
-            String URL = "jdbc:mysql://149.28.128.137:3306/database";
+            String URL = "jdbc:mysql://***:3306/database";
             String USER = "database";
-            String MYSQLPASSWORD = "bjTYFTm4N5sRzziR";
+            String MYSQLPASSWORD = "";
             Connection connect = DriverManager.getConnection(URL, USER, MYSQLPASSWORD);
             // System.out.println("Success connect Mysql server!");
             Statement stmt = connect.createStatement();
