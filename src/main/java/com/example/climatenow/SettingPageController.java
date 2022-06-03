@@ -57,9 +57,9 @@ public class SettingPageController {
 
     private HashMap<String, String> usernameAndPasswordMap = new HashMap<>();
     public static String statusOfChangePasswordOrUsername;
-    private String URL = "jdbc:mysql://149.28.128.137:3306/database";
+    private String URL = "jdbc:mysql://***:3306/database";
     private String USER = "database";
-    private String MYSQLPASSWORD = "bjTYFTm4N5sRzziR";
+    private String MYSQLPASSWORD = "";
 
     @FXML
     void changeToLoginScene(ActionEvent event) {
